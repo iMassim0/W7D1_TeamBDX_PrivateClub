@@ -8,21 +8,22 @@ class UsersController < ApplicationController
   def create
     @user = User.create(params_user)
     if @user.save
-      flash[:notice] = 'Profil enregistré, veuillez vous connecter svp.'
+      flash[:notice] = 'ACCOUNT WAS CREATED'
       log_in @user
       redirect_to root_path
     else
-      flash[:alert] = @user.errors.full_messages.join(" && ")
+      flash[:error] = @user.errors.full_messages.join(" && ")
       redirect_to signup_url
     end
   end
 
   def edit
     @user = User.find(params[:id])
-      if !owner?
-      flash[:error] = "ACCES DENIED"
-      redirect_to index_path
-    end
+     if owner(@user)
+     else
+       flash[:error] = "YOU DON'T HAVE PERMISSION"
+       redirect_to index_path
+     end
   end
 
   def index
@@ -34,15 +35,16 @@ class UsersController < ApplicationController
     @user = User.find_by(id: params[:id])
     @user.update(params_user)
     if @user.save
+      flash[:notice] = "CHANGING DONE"
       redirect_to index_path
     else
-      flash[:error] = 'Rentre bien un pseudo et un texte !'
+      flash[:error] = @user.errors.full_messages.join(" && ")
       redirect_to edit_user_path(@user.id)
     end
   end
 
   def show
-    @user = User.find_by(id: params[:id])
+    @user = User.find(params[:id])
   end
 
   def destroy

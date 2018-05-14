@@ -11,14 +11,24 @@
   </head>
 
   <body>
+    <div class="blockquote text-center">
     <%= render 'layouts/header' %>
-    <div class="container">
-      <h4 class="text-danger" ><%= flash[:notice] %></h4>
-      <h4 class="text-danger" ><%= flash[:alert] %></h4>
+
+    <div id="container text-center">
+      <% if flash[:notice] %>
+        <p class="btn btn-outline-success"><%= flash[:notice] %></p>
+      <% end %>
+      <% if flash[:error] %>
+        <p class="btn btn-outline-danger"><%= flash[:error] %></p>
+      <% end %>
+
+      <% flash[:error] = flash[:notice] = nil %>
     </div>
+
     <div class="start">
       <%= yield %>
     </div>
     <%= render 'layouts/footer' %>
+    </div>
   </body>
 </html>

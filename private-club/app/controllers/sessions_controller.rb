@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
       flash[:notice] = "Welcome! Access permitted!"
       redirect_to root_path
     else
-      flash[:alert] = "Id inconnue"
+      flash[:error] = "UNKNOW ID"
       render 'new'
     end
   end

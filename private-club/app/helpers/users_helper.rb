@@ -1,7 +1,12 @@
 module UsersHelper
 
-  def current_user
-    @current_user ||= User.find_by(id: session[:user_id])
+  def owner(user)
+    current_user
+    if user == current_user
+      return true
+    else
+      return false
+    end
   end
-  
+
 end
