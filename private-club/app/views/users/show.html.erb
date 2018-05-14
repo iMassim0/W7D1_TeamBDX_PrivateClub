@@ -6,6 +6,6 @@
     <p class = "btn btn-warning"><%= link_to 'Update my informations', edit_user_path(current_user)%></p>
     <% else %>
     <h1>Profile of <%= @user.firstname %> <%= @user.lastname %></h1>
-    <h2>Contact : <%= @current_user.email %></h2>
+    <h2>Contact : <%= @user.email %></h2>
     <% end %>
 </div>
