@@ -1,0 +1,19 @@
+<div class="content">
+  <div class="box">
+        <h1>Sign in</h1>
+
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3">
+            <%= form_for(:session, url: {action: "create"}) do |f| %>
+
+            <h4 class="text-danger" ><%= flash[:notice] %></h4>
+            <h4 class="text-danger" ><%= flash[:alert] %></h4>
+              <%= f.label :id %>
+              <%= f.text_field :id, class: 'form-control' %>
+<br>
+              <%= f.submit "Log in now !", class: "btn btn-primary" %>
+            <% end %>
+          </div>
+        </div>
+</div>
+</div>

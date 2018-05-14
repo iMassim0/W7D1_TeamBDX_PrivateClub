@@ -1,0 +1,32 @@
+<div class="content">
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Firstname</th>
+        <th scope="col">Lastname</th>
+        <th scope="col">Email</th>
+        <th scope="col">Valid</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @users.each_with_index do |user, i| %>
+        <tr>
+          <th scope="row"><%= i+1 %></th>
+          <td><%= user.firstname %></td>
+          <td><%= user.lastname %></td>
+          <td><%= user.email %></td>
+          <td><%= user.valid? %></td>
+          <td><%= link_to 'Update', user, class: 'btn btn-outline-warning'
+                                          %></td>
+          <td><%= link_to 'Delete', user, class: 'btn btn-outline-danger',
+                                    method: :delete,
+               data: { confirm: 'Sur ?' } %></td>
+        </tr>
+        <% end %>
+    </tbody>
+  </table>
+
+</div>
