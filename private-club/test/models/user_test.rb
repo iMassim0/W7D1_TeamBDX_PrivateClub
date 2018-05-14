@@ -1,5 +1,5 @@
 require 'test_helper'
-
+# exo 2.1
 class UserTest < ActiveSupport::TestCase
   # test sans first name
   test "when firstname is blank" do

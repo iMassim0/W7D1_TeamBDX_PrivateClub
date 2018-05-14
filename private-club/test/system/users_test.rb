@@ -1,5 +1,5 @@
 require "application_system_test_case"
-
+# exo 2.2
 class UsersText < ApplicationSystemTestCase
 
   test "1 - links avaible in home page" do
