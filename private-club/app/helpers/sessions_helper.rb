@@ -16,4 +16,10 @@ module SessionsHelper
       session.delete(:user_id)
       @current_user = nil
     end
+
+    def owner?
+        if @user == current_user
+        end
+    end
+
   end

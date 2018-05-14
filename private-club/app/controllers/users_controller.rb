@@ -19,14 +19,19 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
+      if !owner?
+      flash[:error] = "ACCES DENIED"
+      redirect_to index_path
+    end
   end
 
   def index
     @users = User.all
+    @current_user = current_user
   end
 
   def update
-    @user = User.find(params[:id])
+    @user = User.find_by(id: params[:id])
     @user.update(params_user)
     if @user.save
       redirect_to index_path
@@ -37,7 +42,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = User.find_by(id: params[:id])
   end
 
   def destroy

@@ -11,5 +11,7 @@ Rails.application.routes.draw do
 
   get '/index', to: "users#index", as: 'index'
 
+  get '/profile/:id', to: "users#show", as: 'profile'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

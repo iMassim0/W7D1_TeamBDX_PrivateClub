@@ -20,12 +20,16 @@
           <td><%= user.lastname %></td>
           <td><%= user.email %></td>
           <td><%= user.valid? %></td>
-          <td><%= link_to 'Update', edit_user_path(user), class: 'btn btn-outline-warning' %></td>
-          <td><%= link_to 'Delete', user, class: 'btn btn-outline-danger',
-                                    method: :delete,
-               data: { confirm: 'Sur ?' } %></td>
+          <% if current_user == user %>
+            <td><%= link_to 'Update', edit_user_path(user), class: 'btn btn-outline-warning' %></td>
+            <td><%= link_to 'Delete', user, class: 'btn btn-outline-danger',
+                                      method: :delete,
+                 data: { confirm: 'Sur ?' } %></td>
+          <% else %>
+          <td><%= link_to "You don't have permission", class: 'btn btn-outline-secondary' %></td>
         </tr>
         <% end %>
+      <% end %>
     </tbody>
   </table>
 </div>
