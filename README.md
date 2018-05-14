@@ -58,8 +58,8 @@ Pour les plus hardis, un game peut se tenter via la console :
 
 Enfin, au cas ou, voici le lien en production de l'app :
 ```
-  @ https://private-club-thp-bdx.herokuapp.com/
-
+  @ https://private-club-thp-bdx.herokuapp.com/
+```
 
 **NOTA : $ = terminal || > = console rails || @ = web browser**
 
