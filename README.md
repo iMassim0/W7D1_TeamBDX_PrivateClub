@@ -1,3 +1,5 @@
+> https://private-club-thp-bdx.herokuapp.com/
+
 # Week n°7 on Day n°1 - THP by Team BDX - @massimo
 # Test Driven Development on PrivateClub
 
@@ -48,12 +50,16 @@ Puis vous rendre à l'adresse suivante :
 ```
   @ http://localhost:3000/
 ```
-Et effectuer les tests que vous souhaitez !
 
 Pour les plus hardis, un game peut se tenter via la console :
 ```
   $ rails console
 ```
+
+Enfin, au cas ou, voici le lien en production de l'app :
+```
+  @ https://private-club-thp-bdx.herokuapp.com/
+
 
 **NOTA : $ = terminal || > = console rails || @ = web browser**
 
