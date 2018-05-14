@@ -1,8 +1,9 @@
-# Week n°7 on Day n°1 - THP by Team BDX - @massimo - Test Driven Development on PrivateClub
+# Week n°7 on Day n°1 - THP by Team BDX - @massimo
+# Test Driven Development on PrivateClub
 
 ## Projet du jour :
 
-Le projet du jour consiste à créer de toute pièce une application en pensant dès le début à la manière de tester celle-ci ! Prisée dans le monde de la programmation, la méthode de test de son app au cours de sa rédaction est une technique qui vise à réduire le temps passé à réparer les dégats, lorsque le site est de taille conséquente.
+Le projet du jour consiste à créer de toute pièce une application en pensant dès le début à la manière de tester celle-ci ! Prisée dans le monde de la programmation, la méthode de test d'une app est une technique appréciée et recherchée. Un développeur habile, malin et minutieux effectuera simultanément rédaction && tests lors d'une création d'une app.
 
 ## Pré-requis et installation :
 
@@ -17,12 +18,16 @@ Le projet du jour consiste à créer de toute pièce une application en pensant 
 3 - Se rendre dans le dossier souhaité, et effectuer cette ligne de commandes suivante pour initialiser le fonctionnement :
 
 ```
-  $ bundle install && rails db:migrate
+  $ bundle install --without production && rails db:migrate
 ```
+
+**NOTA : Vous pouvez, si la gem PG est installée sur votre machine, effectuer un `bundle install` simple.**
 
 ## Conditions de test des exercices pour les corrections
 
-Tous les exercices ont été réalisés, et devraient normalement fonctionner chez vous.
+Les exercices 2.1 concernent uniquement des tests sur le model User.
+Les exercices de 2.2 à 2.4.1 concernent les views et leur fonctionnements.
+Tous les exercices ont été réalisés.
 Pour cela, effectuez ces commandes pour vérifier les TDD des models && views (via system).
 
   - Vérification de l'exercice 2.1 :
@@ -35,25 +40,30 @@ Pour cela, effectuez ces commandes pour vérifier les TDD des models && views (v
   $ rails test:system
 ```
 
-  - Egalement, tu pourras vérifier "à la mano" le fonctionnement du site en lancant une version en local :
+  - Egalement, vous pourrez vérifier "à la mano" le fonctionnement du site en lancant une version en local :
 ```
   $ rails server
 ```
-Puis te rendre à l'adresse suivante :
+Puis vous rendre à l'adresse suivante :
 ```
   @ http://localhost:3000/
 ```
-Et effectuer les tests que tu souhaites !
+Et effectuer les tests que vous souhaitez !
+
+Pour les plus hardis, un game peut se tenter via la console :
+```
+  $ rails console
+```
 
 **NOTA : $ = terminal || > = console rails || @ = web browser**
 
 ## Versions
 
-**Ruby 2.5.1**
+*Ruby 2.5.1*
 
-**Rails 5.2.0**
+*Rails 5.2.0*
 
-**Bundle 1.16.1**
+*Bundle 1.16.1*
 
 ## Contributeur
 
