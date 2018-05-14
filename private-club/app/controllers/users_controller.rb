@@ -12,7 +12,7 @@ class UsersController < ApplicationController
       log_in @user
       redirect_to root_path
     else
-      flash[:alert] = 'Rentre bien les données nécessaires!'
+      flash[:alert] = @user.errors.full_messages.join(" && ")
       redirect_to signup_url
     end
   end

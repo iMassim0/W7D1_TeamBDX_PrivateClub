@@ -5,7 +5,9 @@
       <h2>N'oublie pas ton Id : <%= @current_user.id %></h2>
       <%= link_to "Vers la liste des clubbeurs", index_path, class: 'btn btn-outline-danger' %>
     <% else %>
-        <h4 class="btn btn-danger">Connexion requise pour aller sur ce site.</h4>
+        <h4 class="text-danger">Connexion requise pour aller sur ce site.</h4>
+        <%= link_to "Sign up now", signup_path, class: "btn btn-primary", id: "signup_home" %>
+        <%= link_to "Log in now", login_path, class: "btn btn-success", id: "login_home" %>
         <div class="bdx">
           <img src="https://image.noelshack.com/fichiers/2018/18/4/1525373439-thp-bdx.png" alt="logo thp bdx" class="logo"/>
         </div>

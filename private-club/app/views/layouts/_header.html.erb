@@ -20,7 +20,7 @@
         </ul>
       <div class="ml-auto p-2 bd-highlight">
         <% if user_signed_in? %>
-          <%= link_to 'Log out', logout_path, method: :delete, class: "btn btn-outline-danger my-2 my-sm-0" %>
+          <%= link_to 'Log out', logout_path, method: :delete, class: "btn btn-outline-danger my-2 my-sm-0", id: 'logout' %>
         <% else %>
           <%= link_to 'Sign up', signup_path, class: "btn btn-outline-warning" %>
           <%= link_to 'Log in', login_path, class: "btn btn-outline-success" %>
