@@ -1,15 +1,14 @@
-<div class="content">
+<div class="container">
   <div class="box">
     <% if user_signed_in? %>
       <h1>Hello <%= @current_user.firstname %> <%= @current_user.lastname %>!</h1>
       <h2>N'oublie pas ton Id : <%= @current_user.id %></h2>
       <%= link_to "Vers la liste des clubbeurs", index_path, class: 'btn btn-outline-danger' %>
     <% else %>
-      <br>
-      <h4 class="btn btn-danger">Connexion requise pour aller sur ce site.</h4>
-      <div class="bdx">
-        <img src="https://image.noelshack.com/fichiers/2018/18/4/1525373439-thp-bdx.png" alt="logo thp bdx" class="logo"/>
-      </div>
+        <h4 class="btn btn-danger">Connexion requise pour aller sur ce site.</h4>
+        <div class="bdx">
+          <img src="https://image.noelshack.com/fichiers/2018/18/4/1525373439-thp-bdx.png" alt="logo thp bdx" class="logo"/>
+        </div>
     <% end %>
   </div>
 

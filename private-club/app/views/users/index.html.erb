@@ -1,9 +1,8 @@
-<div class="content">
-
+<div class="container">
   <table class="table">
     <thead>
       <tr>
-        <th scope="col">#</th>
+        <th scope="col">ID</th>
         <th scope="col">Firstname</th>
         <th scope="col">Lastname</th>
         <th scope="col">Email</th>
@@ -12,15 +11,14 @@
     </thead>
 
     <tbody>
-      <% @users.each_with_index do |user, i| %>
+      <% @users.each do |user| %>
         <tr>
-          <th scope="row"><%= i+1 %></th>
+          <th scope="row"><%= user.id %></th>
           <td><%= user.firstname %></td>
           <td><%= user.lastname %></td>
           <td><%= user.email %></td>
           <td><%= user.valid? %></td>
-          <td><%= link_to 'Update', user, class: 'btn btn-outline-warning'
-                                          %></td>
+          <td><%= link_to 'Update', edit_user_path(user), class: 'btn btn-outline-warning' %></td>
           <td><%= link_to 'Delete', user, class: 'btn btn-outline-danger',
                                     method: :delete,
                data: { confirm: 'Sur ?' } %></td>
@@ -28,5 +26,4 @@
         <% end %>
     </tbody>
   </table>
-
 </div>

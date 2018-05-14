@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  skip_before_action :require_login, only: [:new, :create]
+
   def new
     @user = User.new
   end
@@ -27,7 +29,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.update(params_user)
     if @user.save
-      redirect_to show_path(@user.id)
+      redirect_to index_path
     else
       flash[:error] = 'Rentre bien un pseudo et un texte !'
       redirect_to edit_user_path(@user.id)
@@ -41,6 +43,7 @@ class UsersController < ApplicationController
   def destroy
     @user = User.find(params[:id])
     @user.destroy
+    redirect_to index_path
   end
 
   private

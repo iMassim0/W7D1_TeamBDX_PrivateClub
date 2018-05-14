@@ -12,8 +12,10 @@
 
   <body>
     <%= render 'layouts/header' %>
-    <p class="text-info"><%= notice %></p>
-    <p class="text-danger"><%= alert %></p>
+    <div class="container">
+      <h4 class="text-danger" ><%= flash[:notice] %></h4>
+      <h4 class="text-danger" ><%= flash[:alert] %></h4>
+    </div>
     <div class="start">
       <%= yield %>
     </div>

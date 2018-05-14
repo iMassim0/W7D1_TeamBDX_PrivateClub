@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy', as:'logout'
 
-  get 'users/index/', to: "users#index", as: 'index'
+  get '/index', to: "users#index", as: 'index'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
